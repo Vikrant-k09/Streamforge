@@ -2,9 +2,17 @@ const { Kafka } = require('kafkajs');
 const Event = require('../models/event.model');
 const logger = require('../utils/logger');
 
+const parseBrokers = () => {
+  const raw = process.env.KAFKA_BROKER || process.env.KAFKA_BROKERS || 'localhost:9092';
+  return raw
+    .split(',')
+    .map((value) => value.trim())
+    .filter(Boolean);
+};
+
 const kafka = new Kafka({
   clientId: 'streamforge-consumer',
-  brokers: ['localhost:9092'],
+  brokers: parseBrokers(),
 });
 
 const consumer = kafka.consumer({ groupId: 'user-event-group' });
