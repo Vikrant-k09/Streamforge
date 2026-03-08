@@ -223,18 +223,6 @@ Possible enhancements:
 
 ---
 
-# 👨‍💻 Author
-
-**Vikrant**
-
-Software Engineer  
-NIT Hamirpur  
-
-GitHub:  
-https://github.com/Vikrant-k09
-
----
-
 # ⭐ Purpose
 
 StreamForge was built to explore **event-driven backend architectures** and understand how modern distributed systems process large-scale event streams.
